@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Steph-ohara/Park-N-Stay/issues"
   },
-  "homepage": "https://github.com/Steph-ohara/Park-N-Stay#readme"
+  "homepage": "https://github.com/Steph-ohara/Park-N-Stay#readme",
+  "dependencies": {
+    "handlebars": "^4.7.7"
+  }
 }
