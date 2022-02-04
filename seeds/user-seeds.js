@@ -1,22 +1,26 @@
-// For future development 
+const bcrypt = require('bcrypt');
+const password = "12345"
+const hash = bcrypt.hashSync(password, 10);
 
-// const { User } = require('../models');
+const { User } = require('../models');
 
-// const userData = [
-//  {
-//      username: 'lopez1234',
-//      type: '',
-//      creadted_at: new Date(),
-//      // comments: [{}, {}],
-//      // user: {
-//      // username: 'lopez1432"
-//      // }
-//     },
+const userData = [{
+    username: 'alex',
+    email: 'alex@gmail.com',
+    password: hash,
+},
+{
+    username: 'stephanie',
+    email: 'steph@gmail.com',
+    password: hash,
+},
+{
+    username: 'connor',
+    email: 'connor@gmail.com',
+    password: hash,
+},
+];
 
+const seedUser = () => User.bulkCreate(userData);
 
-//  ],
-
-
-// const seedUsers = () => Users.bulkCreate(userData);
-
-// module.exports = seedUsers;
+module.exports = seedUser;

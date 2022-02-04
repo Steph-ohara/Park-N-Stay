@@ -1,6 +1,6 @@
-const { MP } = require('../models');
+const { Post } = require('../models');
 
-const mpData = [{
+const postData = [{
     name: 'Disneyland',
     type: 'Theme Park',
 },
@@ -15,4 +15,6 @@ const mpData = [{
 
 ];
 
-const seedMP = () => MP.bulkCreate(mpData)
+const seedPost = () => Post.bulkCreate(postData);
+
+module.exports = seedPost;
