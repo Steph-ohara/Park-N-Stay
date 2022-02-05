@@ -45,6 +45,8 @@ app.get('/places',(req, res) => {
     params: {
       location: { lat: 33.897696, lng: -117.460933 }, 
       radius: 500,
+      type: 'parking',
+      opennow: true,
       key: "AIzaSyB9hovmDjqkP0Ybn9L35wT3fGwLVf03ieM",
     },
     timeout: 1000, // milliseconds
