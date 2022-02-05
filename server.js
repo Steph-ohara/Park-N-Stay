@@ -1,3 +1,7 @@
+const Handlebars = require("handlebars");
+const template = Handlebars.compile("Name: {{name}}");
+console.log(template({ name: "Nils" }));
+
 const express = require('express');
 const axios = require('axios');
 const PORT = process.env.PORT || 5001
