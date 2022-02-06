@@ -18,13 +18,12 @@
   },
   "homepage": "https://github.com/Steph-ohara/Park-N-Stay#readme",
   "dependencies": {
-    "handlebars": "^4.7.7"
-  "keywords": [],
-  "dependencies": {
+    "@googlemaps/google-maps-services-js": "^3.3.8",
     "axios": "^0.25.0",
     "bcrypt": "^5.0.1",
     "express": "^4.17.2",
     "express-handlebars": "^6.0.2",
+    "handlebars": "^4.7.7",
     "jquery-datetimepicker": "^2.5.21",
     "mysql2": "^2.3.3",
     "sequelize": "^6.15.0"

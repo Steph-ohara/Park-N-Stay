@@ -1,0 +1,12 @@
+
+<button onclick="places()">Places</button>
+
+<script>
+function places() {
+   fetch("http://localhost:5001/places").then((res) => {
+       console.log(res)
+   }).catch((err) => {
+       console.log(err)
+   })
+}
+</script>
