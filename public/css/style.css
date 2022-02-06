@@ -1,0 +1,18 @@
+.navlink {
+    font-family: 'Space Mono';
+    color: #102B30;
+}
+
+.navlink:hover {
+    color: #49958B;
+}
+
+button, .navbtn {
+    padding: 10px;
+    border-radius: 10px;
+    font-family: 'Space Mono';
+}
+
+input {
+    font-family: 'Space Grotesk';
+}
