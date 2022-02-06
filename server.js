@@ -11,8 +11,9 @@ const { Client } = require("@googlemaps/google-maps-services-js");
 
 const client = new Client({});
 
-
-
+const handlebars = require('express-handlebars');
+// added from module 14
+const hbs = handlebars.create({});
 
 const app = express();
 
@@ -21,13 +22,15 @@ const bcrypt = require("bcrypt");
 const mysql2 = require("mysql2");
 const sequelize = require("sequelize");
 
+// middleware for css 
 app.use(express.static(path.join(__dirname, 'public')));
 app.engine('handlebars', engine({
     layoutsDir: __dirname + '/views/layouts/',
     partialsDir: __dirname + '/views/partials/'
 }));
-app.set('view engine', 'handlebars');
 
+//app.engine("handlebars", handlebars({ defaultLayout: "main" }));
+app.set('view engine', 'handlebars');
 
 // const routes = require("./controllers/api");
 
