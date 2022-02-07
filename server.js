@@ -1,7 +1,6 @@
 const Handlebars = require("handlebars");
 const template = Handlebars.compile("Name: {{name}}");
 const path = require('path');
-console.log(template({ name: "Nils" }));
 
 const express = require("express");
 const axios = require("axios");
@@ -39,7 +38,7 @@ app.set('view engine', 'handlebars');
 app.get("/", (req, res) => {
     console.log('/ route')
   //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-  res.render("test-places");
+  res.render("homepage");
 });
 
 app.listen(PORT, () => {
