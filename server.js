@@ -1,45 +1,50 @@
-const Handlebars = require("handlebars");
-const template = Handlebars.compile("Name: {{name}}");
 const path = require('path');
-console.log(template({ name: "Nils" }));
+const express = require('express');
+const axios = require('axios');
+const exphbs = require('express-handlebars');
 
-const express = require("express");
-const axios = require("axios");
+const app = express();
 const PORT = process.env.PORT || 5001;
 
 const { Client } = require("@googlemaps/google-maps-services-js");
 
 const client = new Client({});
 
-const handlebars = require('express-handlebars');
-// added from module 14
-const hbs = handlebars.create({});
-
-const app = express();
-
-const { engine } = require ('express-handlebars');
 const bcrypt = require("bcrypt");
 const mysql2 = require("mysql2");
 const sequelize = require("sequelize");
 
 // middleware for css 
-app.use(express.static(path.join(__dirname, 'public')));
-app.engine('handlebars', engine({
-    layoutsDir: __dirname + '/views/layouts/',
-    partialsDir: __dirname + '/views/partials/'
-}));
-
-//app.engine("handlebars", handlebars({ defaultLayout: "main" }));
+const hbs = exphbs.create({});
+app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+app.use(express.static(path.join(__dirname + 'public')));
+
+// app.use(require('./controllers'));
+
+
+
+
+// app.engine('handlebars', engine({
+//     layoutsDir: __dirname + '/views/layouts/',
+//     partialsDir: __dirname + '/views/partials/'
+// }));
+
+
 
 // const routes = require("./controllers/api");
 
 // app.use(routes);
 
+
+
+
+
+//Serves the body of the page (homepage.handlebars) to the template layout (main.handlebars)
 app.get("/", (req, res) => {
     console.log('/ route')
-  //Serves the body of the page aka "main.handlebars" to the container //aka "index.handlebars"
-  res.render("test-places");
+  res.render("homepage");
 });
 
 app.get("/places", (req, res) => {
